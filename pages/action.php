@@ -1,18 +1,31 @@
 <?php
 require_once '../vendor/autoload.php';
-use App\classes\Series;
+use App\classes\StringWordCount;
+use App\classes\Student;
 
 if(isset($_POST['btn'])){
-    $series = new Series($_POST);
-  $result = $series->makeSeries();
+    $stringWordCount = new StringWordCount($_POST);
+    $result = $stringWordCount->getWordString();
     include 'index.php';
 
 
+}
+
+else if(isset($_GET['status'])){
+    if ($_GET['status'] == 'search')
+    {
+        $student = new Student();
+        $students = $student->getAllStudent();
+        include 'search.php';
+    }
 }
 else
 {
     header('Location: index.php');
 }
+
+
+
 
 
 
