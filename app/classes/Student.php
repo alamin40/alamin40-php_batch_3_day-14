@@ -2,7 +2,16 @@
 namespace App\classes;
 class Student
 {
-        public function getAllStudent(){
+    protected $text;
+    protected $students;
+    protected $result = [];
+
+    public function __construct($post=null)
+    {
+        $this->text = $post['search'];
+    }
+
+    public function getAllStudent(){
             return [
                   0 => [
                       'name'        =>  'Rony',
@@ -47,5 +56,18 @@ class Student
                 ],
 
             ];
+        }
+
+        public function getAllStudentbBySearchText(){
+            $this->students  = $this->getAllStudent();
+             foreach ($this->students as $student){
+                 if ($this->text == $student['name']){
+                     $this->result = $student;
+                     break;
+                 }
+
+             }
+             return $this->result;
+
         }
 }

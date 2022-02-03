@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-10 mx-auto">
                 <div class="card">
-                    <div class="card-header">All User Info</div>
+                    <div class="card-header">Search result</div>
                     <div class="card-body">
 
 
@@ -20,6 +20,8 @@
                             </div>
                         </form>
 
+                        <?php if(isset($result['name'])) { ?>
+
 
                         <table class="table table-bordered table-hover">
                             <thead>
@@ -32,17 +34,19 @@
                             </thead>
 
                             <tbody>
-                            <?php foreach ($students as $student){ ?>
-                            <tr>
-                                <td><?php echo $student['name']; ?></td>
-                                <td><?php echo $student['mobile']; ?></td>
-                                <td><?php echo $student['email']; ?></td>
-                                <td><?php echo $student['address']; ?></td>
-
-                            </tr>
-                             <?php } ?>
+                                <tr>
+                                    <td><?php echo $result['name']; ?></td>
+                                    <td><?php echo $result['mobile']; ?></td>
+                                    <td><?php echo $result['email']; ?></td>
+                                    <td><?php echo $result['address']; ?></td>
+                                </tr>
                             </tbody>
+
                         </table>
+
+                        <?php } else { ?>
+                            <h1 class="text-danger text-center">Sorry. No record found.</h1>
+                        <?php } ?>
                     </div>
                 </div>
             </div>

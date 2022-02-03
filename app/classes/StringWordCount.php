@@ -10,6 +10,7 @@ class StringWordCount
     {
         $this->string = $post['string'];
 
+
     }
 
     public function index(){

@@ -11,13 +11,19 @@ if(isset($_POST['btn'])){
 
 }
 
-else if(isset($_GET['status'])){
+elseif(isset($_GET['status'])){
     if ($_GET['status'] == 'search')
     {
         $student = new Student();
         $students = $student->getAllStudent();
         include 'search.php';
     }
+}
+
+elseif(isset($_POST['search_btn'])){
+   $student = new Student($_POST);
+   $result = $student-> getAllStudentbBySearchText();
+   include 'search_result.php';
 }
 else
 {
