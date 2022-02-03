@@ -8,7 +8,9 @@ class Student
 
     public function __construct($post=null)
     {
-        $this->text = $post['search'];
+        if(isset($post['search'])){
+            $this->text = $post['search'];
+        }
     }
 
     public function getAllStudent(){
