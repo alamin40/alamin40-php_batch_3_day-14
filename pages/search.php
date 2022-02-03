@@ -7,6 +7,20 @@
                 <div class="card">
                     <div class="card-header">All User Info</div>
                     <div class="card-body">
+
+
+                        <form action="" method="post">
+                            <div class="input-group mb-4">
+                                <input type="text" class="form-control" name="search"/>
+                                <div class="input-group-append">
+                                    <button type="submit" class="btn btn-outline-success">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+
+
                         <table class="table table-bordered table-hover">
                             <thead>
                             <tr>
